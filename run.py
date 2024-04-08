@@ -37,7 +37,6 @@ def putt():
     return putt
 
 #Course Setup
-
 full_hole_range = [range(130,520,5)]
 par3 = [range(130,250,5)]
 par4 = [range(250,440,5)]
@@ -49,3 +48,23 @@ par4_5 = par4 + par5
 par3_count = 0
 par4_count = 0
 par5_count = 0
+
+#Scorecard
+total_strokes = 0
+total_to_par = 0
+
+#Introduction
+print("Welcome to Type Golf! Ready to play?")
+
+answer = input(" ")
+
+if answer == "no":
+    print("Come back when you are ready to play.")
+    exit()
+else:
+    print("Good Luck!")
+
+club_choices = "Here is your bag: Driver, 5 Iron, 7 Iron, 9 Iron, Pitching Wedge, Lob Wedge, Putter"
+
+print(club_choices)
+
