@@ -37,7 +37,7 @@ def putt():
     return putt
 
 #Course Setup
-full_hole_range = [range(130,520,5)]
+full_range = [range(130,520,5)]
 par3 = [range(130,250,5)]
 par4 = [range(250,440,5)]
 par5 = [range(440,500,5)]
@@ -55,16 +55,43 @@ total_to_par = 0
 
 #Introduction
 print("Welcome to Type Golf! Ready to play?")
+print()
 
 answer = input(" ")
 
 if answer == "no":
+    print()
     print("Come back when you are ready to play.")
+    print()
     exit()
-else:
-    print("Good Luck!")
 
-club_choices = "Here is your bag: Driver, 5 Iron, 7 Iron, 9 Iron, Pitching Wedge, Lob Wedge, Putter"
+else:
+    print()
+    print("Good Luck!")
+    print()
+
+club_choices = "Here is your bag: Driver, 5 Iron, 7 Iron, 9 Iron, Pitching Wedge, Lob Wedge, Putter."
 
 print(club_choices)
+print()
 
+#Main Game
+
+#Loop for holes 1-9
+for x in range(1,10):
+
+    #Create hole count restrictions on par
+    if par3_count < 2 and par4_count < 5 and par5_count < 2:
+        hole_length = random.choice(full_range)
+    if par3_count >= 2 and par4_count < 5 and par5_count < 2:
+        hole_length = random.choice(par4_5)
+    if par3_count >= 2 and par4_count < 5 and par5_count >= 2:
+        hole_length = random.choice(par4)
+    if par3_count < 2 and par4_count < 5 and par5_count >= 2:
+        hole_length = random.choice(par3_4)
+    if par3_count < 2 and par4_count >= 5 and par5_count >= 2:
+        hole_length = random.choice(par3)
+    if par3_count >= 2 and par4_count >= 5 and par5_count < 2:
+        hole_length = random.choice(par5)
+    if par3_count < 2 and par4_count >= 5 and par5_count < 2:
+        hole_length = random.choice(par3_5)  
