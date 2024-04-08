@@ -35,3 +35,17 @@ def hit_lob_wedge():
 def putt():
     putt = random.choice(putts)
     return putt
+
+#Course Setup
+
+full_hole_range = [range(130,520,5)]
+par3 = [range(130,250,5)]
+par4 = [range(250,440,5)]
+par5 = [range(440,500,5)]
+par3_4 = par3 + par4
+par3_5 = par3 + par5
+par4_5 = par4 + par5
+
+par3_count = 0
+par4_count = 0
+par5_count = 0
