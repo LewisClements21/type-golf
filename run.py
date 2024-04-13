@@ -95,3 +95,18 @@ for x in range(1,10):
         hole_length = random.choice(par5)
     if par3_count < 2 and par4_count >= 5 and par5_count < 2:
         hole_length = random.choice(par3_5)  
+
+    #Par for the hole
+    if hole_length <= 250:
+        par = 3
+        par3_count += 1
+    elif hole_length > 250 and hole_length <= 440:
+        par = 4
+        par4_count += 1
+    elif hole_length > 440:
+        par = 5
+        par5_count += 1
+    
+    #Set perameters for starting each hole
+    distance_remaining = hole_length
+    hole_shots = 0
