@@ -1,3 +1,5 @@
+import random
+
 #Clubs
 driver_distance = [range(220,260, 5)]
 five_distance = [range(155, 185, 5)]
@@ -107,6 +109,62 @@ for x in range(1,10):
         par = 5
         par5_count += 1
     
-    #Set perameters for starting each hole
+    #Set parameters for starting each hole
     distance_remaining = hole_length
     hole_shots = 0
+
+    #Show player the hole information
+    print("Hole #" + str(x) + " is a " + str(hole_length) + "-yard Par " + str(par) + "." )
+    print()
+
+        #Start loop to be able to choose clubs while at least 20 yards away
+    while distance_remaining >= 20:
+        club = input("What club would you like to use? ")
+        if club == "Driver" or club == "driver":
+            shot_distance = hit_driver()
+            print()
+            print("You hit your Driver " + str(shot_distance) + " yards.")
+            distance_remaining = abs(distance_remaining - shot_distance)
+            print("You have " + str(distance_remaining) + " yards left.")
+            print()
+            hole_shots += 1
+        elif club == "5Iron" or club == "5 iron" or club == "5 Iron" or club == "5" or club == "5i" or club == "5I" or club == "5iron":
+            shot_distance = hit_five_iron()
+            print()
+            print("You hit your 5 Iron" + str(shot_distance) + " yards.")
+            distance_remaining = abs(distance_remaining - shot_distance)
+            print("You have " + str(distance_remaining) + " yards left.")
+            print()
+            hole_shots += 1
+        elif club == "7 Iron" or club == "7 iron" or club == "7iron" or club == "7Iron" or club == "7" or club == "7i":
+            shot_distance = hit_seven_iron()
+            print()
+            print("You hit your 7 Iron " + str(shot_distance) + " yards.")
+            distance_remaining = abs(distance_remaining - shot_distance)
+            print("You have " + str(distance_remaining) + " yards left.")
+            print()
+            hole_shots += 1
+        elif club == "9 Iron" or club == "9 iron" or club == "9iron" or club == "9Iron" or club == "9" or club == "9i" or club == "9I":
+            shot_distance = hit_high_iron()
+            print()
+            print("You hit your 9 Iron " + str(shot_distance) + " yards.")
+            distance_remaining = abs(distance_remaining - shot_distance)
+            print("You have " + str(distance_remaining) + " yards left.")
+            print()
+            hole_shots += 1
+        elif club == "Pitching Wedge" or club == "pitching wedge" or club == "Pitching wedge" or club == "pitching Wedge" or club == "pitching" or club == "Pitching":
+            shot_distance = hit_pitching_wedge()
+            print()
+            print("You hit your Pitching Wedge " + str(shot_distance) + " yards.")
+            distance_remaining = abs(distance_remaining - shot_distance)
+            print("You have " + str(distance_remaining) + " yards left.")
+            print()
+            hole_shots += 1
+        elif club == "Lob Wedge" or club == "lob wedge" or club == "Lob wedge" or club == "lob Wedge" or club == "lob" or club == "Lob":
+            shot_distance = hit_lob_wedge()
+            print()
+            print("You hit your Lob Wedge " + str(shot_distance) + " yards.")
+            distance_remaining = abs(distance_remaining - shot_distance)
+            print("You have " + str(distance_remaining) + " yards left.")
+            print()
+            hole_shots += 1
