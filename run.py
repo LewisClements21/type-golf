@@ -174,9 +174,10 @@ for x in range(1,10):
     if distance_remaining < 20:
         if distance_remaining == 0:
             putts = 0
+            hole_strokes = hole_shots
         else:
             putts = putt()
-            hole_strokes = hole_shots + putts     
+            hole_strokes = hole_shots + putts
             hole_to_par = hole_strokes - par
             total_strokes += hole_strokes
             total_to_par += hole_to_par
