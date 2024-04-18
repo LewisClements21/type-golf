@@ -2,6 +2,7 @@ import random
 
 #Clubs
 driver_distance = list(range(220, 260, 5))
+three_wood_distance = list(range(185, 220, 5))
 five_distance = list(range(155, 185, 5))
 seven_distance = list(range(140, 160, 5))
 nine_distance = list(range(115, 135, 5))
@@ -13,6 +14,11 @@ putter = [1, 2, 3]
 #Define functions for hitting clubs
 def hit_driver():
     club_distance = random.choice(driver_distance)
+    return club_distance
+
+
+def hit_three_wood():
+    club_distance = random.choice(three_wood_distance)
     return club_distance
 
 
@@ -80,7 +86,7 @@ else:
     print("Good Luck!")
     print()
 
-club_choices = "Here is your bag: Driver, 5 Iron, 7 Iron, 9 Iron, Pitching Wedge, Lob Wedge."
+club_choices = "Here is your bag: Driver, 3 Wood, 5 Iron, 7 Iron, 9 Iron, Pitching Wedge, Lob Wedge."
 
 print(club_choices)
 print()
@@ -132,6 +138,14 @@ for x in range(1, 10):
             shot_distance = hit_driver()
             print()
             print("You hit your Driver " + str(shot_distance) + " yards.")
+            distance_remaining = abs(distance_remaining - shot_distance)
+            print("You have " + str(distance_remaining) + " yards left.")
+            print()
+            hole_shots += 1
+        elif club == "3Wood" or club == "3 Wood" or club == "3 wood" or club == "3wood" or club == "3Wood" or club == "3w" or club == "3W":
+            shot_distance = hit_three_wood()
+            print()
+            print("You hit your 3 Wood" + str(shot_distance) + " yards.")
             distance_remaining = abs(distance_remaining - shot_distance)
             print("You have " + str(distance_remaining) + " yards left.")
             print()
