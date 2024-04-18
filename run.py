@@ -153,7 +153,7 @@ for x in range(1, 10):
             print()
             hole_shots += 1
         elif club == "9 Iron" or club == "9 iron" or club == "9iron" or club == "9Iron" or club == "9" or club == "9i" or club == "9I":
-            shot_distance = hit_high_iron()
+            shot_distance = hit_nine_iron()
             print()
             print("You hit your 9 Iron " + str(shot_distance) + " yards.")
             distance_remaining = abs(distance_remaining - shot_distance)
