@@ -2,7 +2,6 @@
 
 Type-Golf is an python terminal game that allows user to play 9 holes of golf using just their keyboard. The terminal will tell the player what clubs are in their bag, then the par and distance for the hole then allow the user to select a club from the bag to suit.
 
-![Am I responsive](/assets/images/am-i-responsive.png)
 
 ## User Experience (UX)
 
