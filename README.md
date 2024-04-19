@@ -32,11 +32,14 @@ Type-Golf provides a fun and replayable experience that allows users to play 9 r
 
 * Main objective is to provide an engaging and interactive platform for users to relax and enjoy.
 * The terminal tracks the users score and number of strokes.
-
+* Variety of clubs for the player to use.
+* Each club has their own distances.
+* When the user hits the ball onto the green (within 20yards) the game automatically putts the ball.
+* The user will have their score displayed at the end when 9 holes have been played.
 ## Features Left to Implement
 
 * Add more clubs.
-* Make the game multiplayer and add a username system.
+* Make the game local multiplayer and add a username system.
 * Add a probability which can affect the ball such as wind and weather effects.
 
 ---
@@ -78,100 +81,63 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate eve
 
 ### Validation results
 
-<details>
-<summary>No major errors were returned when passing through the CI Python Validator.
-</summary>
+![Python Linter Results](assets/images/linter-results.png)
 
-3: E265 block comment should start with '# '
-
-13: E265 block comment should start with '# '
-
-49: E265 block comment should start with '# '
-
-62: E265 block comment should start with '# '
-
-66: E265 block comment should start with '# '
-
-83: E501 line too long (93 > 79 characters)
-
-88: E265 block comment should start with '# '
-
-90: E265 block comment should start with '# '
-
-93: E265 block comment should start with '# '
-
-109: E265 block comment should start with '# '
-
-120: E265 block comment should start with '# '
-
-124: E265 block comment should start with '# '
-
-125: E501 line too long (90 > 79 characters)
-
-128: E265 block comment should start with '# '
-
-139: E501 line too long (135 > 79 characters)
-
-147: E501 line too long (119 > 79 characters)
-
-155: E501 line too long (135 > 79 characters)
-
-163: E501 line too long (166 > 79 characters)
-
-166: E501 line too long (82 > 79 characters)
-
-
-180: E265 block comment should start with '# '
-
-195: E265 block comment should start with '# '
-
-197: E501 line too long (89 > 79 characters)
-
-199: E501 line too long (124 > 79 characters)
-
-201: E501 line too long (81 > 79 characters)
-
-205: E501 line too long (80 > 79 characters)
-
-207: E501 line too long (81 > 79 characters)
-
-209: E501 line too long (83 > 79 characters)
-
-213: E501 line too long (82 > 79 characters)
-
-
-235: W292 no newline at end of file
-</details>
-
-
-### Manual Testing 
+## Manual Testing 
 
 * The website was tested by the developer and multiple volunteers.
-* A large amount of testing was done to ensure code works perfectly and the user experience is smooth.
 
+| Feature | Expected Result | Steps Taken | Actual Result |
+| ------- | ----------------|-------------|---------------|
+| Rules   | To display the rules when "y" is entered into the terminal| Input "y" into terminal, input "n" to skip| As Expected |
+| Selecting a Club | Hit shot with selected club then provide feedback to the user | Input club name "driver" for example into terminal. | As Expected |
+| Putting | Putting to happen automatically when a shot makes it to the green | Hit shot onto the green using an iron | As Expected |
+| Game end | Terminal to provide achieved strokes and score then provide exit prompt | Finish 9 holes then input exit when prompted | As Expected |
+
+## Input validation testing
+
+* Display Rules
+    * Must be "y" or "n"
+    * Can't continue unless value is input
+* Club Selection
+    * Input must contain valid club name from the bag or abbreviation. For example "5i" for 5 Iron
+    * Cannot continue unless club is selected
+* Exit
+    * Input must be "exit" or game will not end
+
+## Fixed Bugs
+* if the ball landed exactly 20 yards from the hole it wasn't possible to hit the ball onto the green without first hitting it away with a bigger club, tweaked the range of the lob wedge to counteract this.
+* 9 Iron could not be used due to a mistake when defining the function.
+* If the user got a hole in one or hit the ball into the hole from the fairway the game would end abruptly due to an error in indentation.
 ## Deployment
 
-### GitHub Pages
+### Deploying to Heroku
 
-GitHub Pages used to deploy live version of the website.
-1. Log in to GitHub and locate [GitHub Repository capital-cities](https://github.com/Thomas-Tomo/capital-cities)
-2. At the top of the Repository(not the main navigation) locate "Settings" button on the menu.
-3. Scroll down the Settings page until you locate "GitHub Pages".
-4. Under "Source", click the dropdown menu "None" and select "Main" and click "Save".
-5. The page will automatically refresh.
-6. Scroll back to locate the now-published site [link](https://thomas-tomo.github.io/capital-cities/) in the "GitHub Pages" section.
+To deploy with Heroku, Code Institute Python Essentials Template was used so the python code can be viewed in a terminal in a browser
+1. Log in to Heroku or create a new account
+2. On the main page click "New" and select "Create new app"
+3. Choose your unique app name and select your region
+4. Click "Create app"
+5. On the next page find "settings" and locate "Config Vars"
+6. Click "Reveal Config Vars" and add "PORT" key and value "8000", click "Add"
+7. Scroll down, locate "Buildpack" and click "Add", select "Python"
+8. Repeat step 7. only this time add "Node.js", make sure "Python" is first
+9. Scroll to the top and select "Deploy" tab
+10. Select GitHub as deployment method and search for your repository and link them together
+11. Scroll down and select either "Enable Automatic Deploys" or "Manual Deploy"
+12. Deployed site [Type Golf](https://type-golf-99d1ba37f1f5.herokuapp.com/)
 
 ### Forking the GitHub Repository
 
 By forking the repository, we make a copy of the original repository on our GitHub account to view and change without affecting the original repository by using these steps:
 
-1. Log in to GitHub and locate [GitHub Repository capital-cities](https://github.com/Thomas-Tomo/capital-cities)
+1. Log in to GitHub and locate [GitHub Repository type-golf](https://github.com/LewisClements21/type-golf.git)
 2. At the top of the Repository(under the main navigation) locate "Fork" button.
 3. Now you should have a copy of the original repository in your GitHub account.
 
 ### Local Clone
 
-1. Log in to GitHub and locate [GitHub Repository capital-cities](https://github.com/Thomas-Tomo/capital-cities)
+1. Log in to GitHub and locate [GitHub Repository type-golf](https://github.com/LewisClements21/type-golf.git)
 2. Under the repository name click "Clone or download"
 3. Click on the code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open Git Bash
@@ -179,16 +145,13 @@ By forking the repository, we make a copy of the original repository on our GitH
 6. Type `git clone` and then paste The URL copied in the step 3.
 7. Press Enter and your local clone will be created.
 
----
-
-
 ## Credits
 
 ### Code
 
+ * I gained most of my understanding of python from Code Institute lessons.
  * I used w3schools to understand the range() function https://www.w3schools.com/python/ref_func_range.asp
  * I used docs.python.org to better understand how to use the random () function https://docs.python.org/3/library/random.html
- * The README template was helpfully provided by [Code Institute (template)](https://github.com/Code-Institute-Solutions/readme-love-maths/blob/master/README.md)
 
   ### Content
 
