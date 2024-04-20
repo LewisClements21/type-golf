@@ -30,12 +30,39 @@ Type-Golf provides a fun and replayable experience that allows users to play 9 r
 
 ## Features
 
-* Main objective is to provide an engaging and interactive platform for users to relax and enjoy.
+* Main objective is to provide an enjoyable and interactive golf experience for users to relax and enjoy. 
+
 * The terminal tracks the users score and number of strokes.
+
+ ![Scores](assets/images/scores.png)
+
 * Variety of clubs for the player to use.
-* Each club has their own distances.
+
+![Club Selection](assets/images/clubs.png)
+
+
+* Each club has their own distances which are random within a range.
+
+![5 Iron Distance](assets/images/fivei.png)
+
+![3 Wood Distance](assets/images/threew.png)
+
+![Driver Distance](assets/images/driver.png)
+
+![Pitching Wedge Distance](assets/images/pwedge.png)
+
+![Lob Wedge](assets/images/lob.png)
+
+
 * When the user hits the ball onto the green (within 20yards) the game automatically putts the ball.
+
+![Putt](assets/images/putt.png)
+
+
 * The user will have their score displayed at the end when 9 holes have been played.
+
+![User end score](assets/images/score.png)
+
 ## Features Left to Implement
 
 * Add more clubs.
@@ -50,7 +77,7 @@ Type-Golf provides a fun and replayable experience that allows users to play 9 r
   <summary>I used drawio to design a flowchart to understand the concept for the game.
   </summary>
   
-  ![Type-Golf-Flowchart](/assets/type-golf-flowchart.png)
+  ![Type-Golf-Flowchart](/assets/images/type-golf-flowchart.png)
 </details>
 
 ---
@@ -89,8 +116,9 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate eve
 
 | Feature | Expected Result | Steps Taken | Actual Result |
 | ------- | ----------------|-------------|---------------|
-| Rules   | To display the rules when "y" is entered into the terminal| Input "y" into terminal, input "n" to skip| As Expected |
+| Rules   | To display the rules when "y" is entered into the terminal or error message "Invalid input please type y/n" when incorrect value is entered | Input "y" into terminal, input "n" to skip and input nothing to check error message works| As Expected |
 | Selecting a Club | Hit shot with selected club then provide feedback to the user | Input club name "driver" for example into terminal. | As Expected |
+| Selecting a Club that doesn't exist | Error message to appear "You do not have this club in your bag or club name invalid | Tried to input a club that's not in the bag | As Expected | 
 | Putting | Putting to happen automatically when a shot makes it to the green | Hit shot onto the green using an iron | As Expected |
 | Game end | Terminal to provide achieved strokes and score then provide exit prompt | Finish 9 holes then input exit when prompted | As Expected |
 
@@ -118,14 +146,13 @@ To deploy with Heroku, Code Institute Python Essentials Template was used so the
 2. On the main page click "New" and select "Create new app"
 3. Choose your unique app name and select your region
 4. Click "Create app"
-5. On the next page find "settings" and locate "Config Vars"
-6. Click "Reveal Config Vars" and add "PORT" key and value "8000", click "Add"
-7. Scroll down, locate "Buildpack" and click "Add", select "Python"
-8. Repeat step 7. only this time add "Node.js", make sure "Python" is first
-9. Scroll to the top and select "Deploy" tab
-10. Select GitHub as deployment method and search for your repository and link them together
-11. Scroll down and select either "Enable Automatic Deploys" or "Manual Deploy"
-12. Deployed site [Type Golf](https://type-golf-99d1ba37f1f5.herokuapp.com/)
+5. On the next page find "settings"
+6. Scroll down, locate "Buildpack" and click "Add", select "Python"
+7. Repeat step 6. only this time add "Node.js", make sure "Python" is first
+8. Scroll to the top and select "Deploy" tab
+9. Select GitHub as deployment method and search for your repository and link them together
+10. Scroll down and select either "Enable Automatic Deploys" or "Manual Deploy"
+11. Deployed site [Type Golf](https://type-golf-99d1ba37f1f5.herokuapp.com/)
 
 ### Forking the GitHub Repository
 

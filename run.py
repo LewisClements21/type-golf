@@ -75,25 +75,40 @@ print()
 print("Type y/n")
 print()
 
-answer = input("")
-
-if answer == "y":
-    print("*When the game begins you will be presented with your clubs.")
-    print("*The information for the hole will then show.")
-    print("*Type which club you would like to use.")
-    print("*If you dont make it onto the green you will then be shown the")
-    print("distances remaining and prompted to hit your next shot.")
-    print("*Make it onto the green the game will automatically putt for you.")
-    print("*You will move onto the next hole and the loop will repeat.")
 
 
-if answer == "n" or answer == "N":
-    print()
-    print("Good Luck!")
-    print()
+while True:
+    answer = input("")
+    if answer == "y":
+        print()
+        print("*When the game begins you will be presented with your clubs.")
+        print()
+        print("*The information for the hole will then show.")
+        print()
+        print("*Type which club you would like to use.")
+        print()
+        print("*If you dont make it onto the green you will then be shown the")
+        print()
+        print("distances remaining and prompted to hit your next shot.")
+        print()
+        print("*Make it onto the green the game will automatically putt for you.")
+        print()
+        print("*You will move onto the next hole and the loop will repeat.")
+        print()
+        break
 
+    elif answer == "n" or answer == "N":
+        print()
+        print("Good Luck!")
+        print()
+        break
 
-club_choices = ("Here is your bag: Driver, 3 Wood,"
+    elif answer:
+        print()
+        print("Invalid input please type y/n")
+        print()
+
+club_choices = ("Here is your bag: Driver, 3 Wood, "
                 "5 Iron, 7 Iron, 9 Iron, Pitching Wedge, Lob Wedge.")
 
 print()
@@ -176,7 +191,7 @@ for x in range(1, 10):
                 or club == "5iron"):
             shot_distance = hit_five_iron()
             print()
-            print("You hit your 5 Iron" + str(shot_distance) + " yards.")
+            print("You hit your 5 Iron " + str(shot_distance) + " yards.")
             distance_remaining = abs(distance_remaining - shot_distance)
             print("You have " + str(distance_remaining) + " yards left.")
             print()
@@ -304,6 +319,12 @@ print("Type Exit To Exit")
 print()
 print()
 
-end = input("")
-if end == "Exit" or end == "exit":
-    exit()
+while True:
+    end = input("")
+    if end == "Exit" or end == "exit":
+        exit()
+    elif end:
+        print()
+        print("Type Exit To Exit")
+        print()
+
