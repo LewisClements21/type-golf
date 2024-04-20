@@ -88,7 +88,6 @@ while True:
         print("*Type which club you would like to use.")
         print()
         print("*If you dont make it onto the green you will then be shown the")
-        print()
         print("distances remaining and prompted to hit your next shot.")
         print()
         print("*Make it onto the green the game will automatically putt for you.")
